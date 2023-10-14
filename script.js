@@ -1,3 +1,3 @@
 document.getElementById('ilMioLink').addEventListener('click', function() {
-    window.location.href = 'https://youtu.be/OjNpRbNdR7E?si=qz45fX3EV37FQVtL'; // Sostituisci con il tuo link desiderato.
+    window.location.href = 'https://sw1ry.github.io/monday/index2.html'; // Sostituisci con il tuo link desiderato.
 });
