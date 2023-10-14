@@ -1,17 +1,4 @@
-var animateButton = function(e) {
-
-	e.preventDefault;
-	e.target.classList.remove('animate');
-	
-	e.target.classList.add('animate');
-	setTimeout(function(){
-	  e.target.classList.remove('animate');
-	},700);
-  };
-  
-  var bubblyButtons = document.getElementsByClassName("bubble-button");
-  
-  for (var i = 0; i < bubblyButtons.length; i++) {
-	bubblyButtons[i].addEventListener('click', animateButton, false);
-  } 
-
+document.getElementById('ilMioLink').addEventListener('click', function() {
+    // Sostituisci 'URL_DEL_TUO_LINK' con il link a cui vuoi che il pulsante ti porti.
+    window.location.href = 'URL_DEL_TUO_LINK';
+});
