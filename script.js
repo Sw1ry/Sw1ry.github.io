@@ -12,3 +12,4 @@ loginButton.addEventListener("click", () => {
   loginButton.disabled = true;
   loginButton.style.opacity = "0.7";
   loginButton
+});
