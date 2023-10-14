@@ -1,3 +1,14 @@
-document.getElementById('ilMioLink').addEventListener('click', function() {
-    window.location.href = 'https://sw1ry.github.io/monday/index2.html'; // Sostituisci con il tuo link desiderato.
+const loginButton = document.getElementById("login-button");
+
+loginButton.addEventListener("mouseover", () => {
+  loginButton.style.backgroundColor = "#27ae60";
 });
+
+loginButton.addEventListener("mouseout", () => {
+  loginButton.style.backgroundColor = "#2ecc71";
+});
+
+loginButton.addEventListener("click", () => {
+  loginButton.disabled = true;
+  loginButton.style.opacity = "0.7";
+  loginButton
