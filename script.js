@@ -9,7 +9,7 @@ loginButton.addEventListener("mouseout", () => {
 });
 
 loginButton.addEventListener("click", () => {
-  loginButton.disabled = true;
+  loginButton.disabled = false;
   loginButton.style.opacity = "0.7";
   loginButton
 });
