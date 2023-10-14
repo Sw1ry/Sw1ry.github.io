@@ -13,3 +13,9 @@ loginButton.addEventListener("click", () => {
   loginButton.style.opacity = "0.7";
   loginButton
 });
+
+
+window.onload = function() {
+  var audio = new Audio("/extra/Undertale OST 023 - Shop.mp3");
+  audio.play();
+}
