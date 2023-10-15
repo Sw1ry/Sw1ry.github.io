@@ -1,12 +1,3 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 98vh;
-  background-color: #afe5ec;
-}
-
 form {
   display: flex;
   flex-direction: column;
