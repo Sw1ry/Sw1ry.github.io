@@ -5,10 +5,15 @@
   <link rel="stylesheet" href="style.css">
   <body>
     <div class="container">
-      <img src="example.gif" alt="OMGG!!" style="position: absolute; top: 50px; left: 100px;">
-      <img src="example1.gif" alt="OMGG!!" style="position: absolute; top: 450px; left: 400px;">
+      <img src="example.gif" alt="OMGG!!" style="position: absolute; top: 50px; left: 100px;" class="scaled-image">
+      <img src="example1.gif" alt="OMGG!!" style="position: absolute; top: 450px; left: 400px;" class="scaled-image">
     </div>
     <script src="script.js"></script>
+    <style>
+      .scaled-image {
+          transform: scale(0.8); /* 1.5x scale factor */
+      }
+    </style>
     <style>
       body {
         background-image: url('vector1.jpg');
