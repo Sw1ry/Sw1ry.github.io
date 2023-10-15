@@ -23,3 +23,8 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
 }
+
+.image-position {
+  margin-top: 20px;
+  margin-left: 30px;
+}
