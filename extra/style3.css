@@ -24,3 +24,7 @@ form {
     animation: colorRotate 3s linear 0s infinite;
   }
   
+  img.animated-gif{
+    width: auto;
+    height: auto;
+  }
