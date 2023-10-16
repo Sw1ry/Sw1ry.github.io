@@ -1,102 +1,344 @@
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  border-radius: 1px;
-  background-color: #ffffff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  position: relative;
+body,
+h1,
+h2,
+p {
+    margin: 0;
+    padding: 0;
 }
 
 body {
     font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    background-color: #444;
     text-align: center;
 }
 
-.rainbow {
-  text-align: center;
-  text-decoration: underline;
-  font-size: 32px;
-  font-family: monospace;
-  letter-spacing: 1px;
-  animation: colorRotate 3s linear 0s infinite;
+nav ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-@keyframes colorRotate {
-  from {
-    color: #6666ff;
-  }
-  10% {
-    color: #0099ff;
-  }
-  50% {
-    color: #00ff00;
-  }
-  75% {
-    color: #ff3399;
-  }
-  100% {
-    color: #6666ff;
-  }
+nav ul li {
+    display: inline;
+    margin: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+section {
+    padding: 20px;
+}
+
+footer {
+    background-color: #525151;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+.neon {
+    color: #5353ec;
+    /* Colore verde neon */
+    text-shadow: 0 0 10px #5353ec, 0 0 20px #5353ec, 0 0 30px #5353ec, 0 0 40px #5353ec, 0 0 50px #5353ec, 0 0 60px #5353ec, 0 0 70px #5353ec;
+    animation: neon 1s ease-in-out infinite alternate;
+}
+
+body.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-theme h2 {
+    color: #5353ec;
+    text-shadow: 0 0 10px #5353ec, 0 0 20px #5353ec, 0 0 30px #5353ec, 0 0 40px #5353ec, 0 0 50px #5353ec, 0 0 60px #5353ec, 0 0 70px #5353ec;
+}
+
+
+button{
+    width: 160px;
+    height: 60px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 17px;
+    border-radius: 1rem;
+    border: none;
+    position: absolute;
+    top: 42px; 
+    left: 40px;
+    background: #100720;
+    transition: 0.1s;
+     }
+     button::after{
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(circle
+        farthest-corner at 10% 20%, rgba(255,94,247,1)17.8%,
+        rgba(2,245,255,1)100.2%);
+        filter: blur(15px);
+        z-index: -1;
+        position: absolute;
+        left:0;
+        top:0;
+     }
+     button:active{
+        transform: scale(0.9)rotate(3deg);
+        background-image: radial-gradient(circle
+        farthest-corner at 10% 20%, rgba(255,94,247,1)17.8%,
+        rgba(2,245,255,1)100.2%);
+        transition: 0.5s;
+
+     }
+
+
+
+
+/* Animazione di caricamento */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Nascondi l'overlay dopo il caricamento */
+body.loading #loader-overlay {
+    display: none;
+}
+
+
+@keyframes neon {
+    0% {
+        opacity: 0.4;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+span{
+    font-size: 50px;
+    letter-spacing: 7px;
+    text-shadow: 0 0 10px #3C6E71;
+    transition: 5s ;
+    cursor: pointer;
+}
+span:hover{
+    transition: 0.2s ease;
+    color: #8aeff8;
+    text-shadow: 0 0 20px #8aeff8;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap");
+
+:root {
+  --bg: #000000;
+  --clr-1: #00c2ff;
+  --clr-2: #be33ff;
+  --clr-3: #40d9ff;
+  --clr-4: #76ff4c;
+
+  --blur: 1rem;
+  --fs: clamp(2rem, 8vw, 5rem);
+  --ls: clamp(-1.75px, -0.25vw, -3.5px);
 }
 
 body {
-  -webkit-animation:rainbow .1s infinite;
-  -ms-animation:rainbow .5s infinite;
-  -o-animation:rainbow .5s infinite;
-  animation:rainbow .5s infinite;
+  background-color: var(--bg);
+  color: #fff;
+  font-family: "Inter", "DM Sans", Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.content {
+  text-align: center;
+}
+
+.title {
+  font-size: var(--fs);
+  font-weight: 800;
+  letter-spacing: var(--ls);
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+  margin: 0;
+}
+
+.aurora {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  mix-blend-mode: darken;
+  pointer-events: none;
+}
+
+.clr {
+  overflow: hidden;
+  position: absolute;
+  width: 60vw;
+  height: 60vw;
+  background-color: var(--clr-1);
+  border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+  filter: blur(var(--blur));
+  mix-blend-mode: overlay;
+}
+
+.clr:nth-of-type(1) {
+  top: -50%;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-1 12s ease-in-out infinite alternate;
+}
+
+.clr:nth-of-type(2) {
+  background-color: var(--clr-3);
+  right: 0;
+  top: 0;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-2 12s ease-in-out infinite alternate;
+}
+
+.clr:nth-of-type(3) {
+  background-color: var(--clr-2);
+  left: 0;
+  bottom: 0;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-3 8s ease-in-out infinite alternate;
+}
+
+.clr:nth-of-type(4) {
+  background-color: var(--clr-4);
+  right: 0;
+  bottom: -50%;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-4 24s ease-in-out infinite alternate;
+}
+
+@keyframes aurora-1 {
+  0% {
+    top: 0;
+    right: 0;
   }
-  @-webkit-keyframes rainbow {
-  0% {background: #ff0000;}
-  10% {background: #ff8000;}
-  20% {background: #ffff00;}
-  30% {background: #80ff00;}
-  40% {background: #00ff00;}
-  50% {background: #00ff80;}
-  60% {background: #00ffff;}
-  70% {background: #0080ff;}
-  80% {background: #0000ff;}
-  90% {background: #8000ff;}
-  100% {background: #ff0080;}
+
+  50% {
+    top: 100%;
+    right: 75%;
   }
-  @-ms-keyframes rainbow {
-  0% {background: #ff0000;}
-  10% {background: #ff8000;}
-  20% {background: #ffff00;}
-  30% {background: #80ff00;}
-  40% {background: #00ff00;}
-  50% {background: #00ff80;}
-  60% {background: #00ffff;}
-  70% {background: #0080ff;}
-  80% {background: #0000ff;}
-  90% {background: #8000ff;}
-  100% {background: #ff0080;}
+
+  75% {
+    top: 100%;
+    right: 25%;
   }
-  @-o-keyframes rainbow {
-  0% {background: #ff0000;}
-  10% {background: #ff8000;}
-  20% {background: #ffff00;}
-  30% {background: #80ff00;}
-  40% {background: #00ff00;}
-  50% {background: #00ff80;}
-  60% {background: #00ffff;}
-  70% {background: #0080ff;}
-  80% {background: #0000ff;}
-  90% {background: #8000ff;}
-  100% {background: #ff0080;}
+
+  100% {
+    top: 0;
+    right: 0;
   }
-  @keyframes rainbow {
-  0% {background: #ff0000;}
-  10% {background: #ff8000;}
-  20% {background: #ffff00;}
-  30% {background: #80ff00;}
-  40% {background: #00ff00;}
-  50% {background: #00ff80;}
-  60% {background: #00ffff;}
-  70% {background: #0080ff;}
-  80% {background: #0000ff;}
-  90% {background: #8000ff;}
-  100% {background: #ff0080;}
+}
+
+@keyframes aurora-2 {
+  0% {
+    top: -50%;
+    left: 0%;
   }
+
+  60% {
+    top: 100%;
+    left: 75%;
+  }
+
+  85% {
+    top: 100%;
+    left: 25%;
+  }
+
+  100% {
+    top: -50%;
+    left: 0%;
+  }
+}
+
+@keyframes aurora-3 {
+  0% {
+    bottom: 0;
+    left: 0;
+  }
+
+  40% {
+    bottom: 100%;
+    left: 75%;
+  }
+
+  65% {
+    bottom: 40%;
+    left: 50%;
+  }
+
+  100% {
+    bottom: 0;
+    left: 0;
+  }
+}
+
+@keyframes aurora-4 {
+  0% {
+    bottom: -50%;
+    right: 0;
+  }
+
+  50% {
+    bottom: 0%;
+    right: 40%;
+  }
+
+  90% {
+    bottom: 50%;
+    right: 25%;
+  }
+
+  100% {
+    bottom: -50%;
+    right: 0;
+  }
+}
+
+@keyframes aurora-border {
+  0% {
+    border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+  }
+
+  25% {
+    border-radius: 47% 29% 39% 49% / 61% 19% 66% 26%;
+  }
+
+  50% {
+    border-radius: 57% 23% 47% 72% / 63% 17% 66% 33%;
+  }
+
+  75% {
+    border-radius: 28% 49% 29% 100% / 93% 20% 64% 25%;
+  }
+
+  100% {
+    border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+  }
+}		
