@@ -1,0 +1,26 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border-radius: 1px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+  }
+  
+  body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+  }
+  
+  .rainbow {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 32px;
+    font-family: monospace;
+    letter-spacing: 1px;
+    animation: colorRotate 3s linear 0s infinite;
+  }
+  
